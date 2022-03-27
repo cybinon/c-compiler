@@ -21,6 +21,8 @@ export class CodeService {
     const compiler = await new Promise((resolve, reject) => {
       exec(path, (err, stdout, stderr) => {
         if (err) {
+          console.log(err);
+          console.log(stderr);
           reject(err);
         } else {
           resolve(stdout);
