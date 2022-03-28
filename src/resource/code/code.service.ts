@@ -3,13 +3,17 @@ import { exec } from 'child_process';
 
 @Injectable()
 export class CodeService {
-  async compile(path: string): Promise<any> {
+  async compile(path: string, output?: string): Promise<any> {
+    console.log(output);
     const compiler = await new Promise((resolve, reject) => {
-      exec('gcc ' + path, (err, stdout, stderr) => {
-        if (stderr) reject(err);
-        if (err) reject(err);
-        resolve(stdout);
-      });
+      exec(
+        `gcc -o ./codes/${output || 'a.out'} ` + path,
+        (err, stdout, stderr) => {
+          if (stderr) reject(err);
+          if (err) reject(err);
+          resolve(stdout);
+        },
+      );
     }).catch((err) => {
       throw new HttpException(err.message, 500);
     });
