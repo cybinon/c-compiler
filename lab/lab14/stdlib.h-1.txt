@@ -1,0 +1,1 @@
+Ene san ni Stantard utility library gedeg buguud 28 funktstei. Tuunees  atoi() buyu integeriig charluu. chariig integer luu hurvuuleh funkts ni ugsun turliig nuguu ruu ni hurvuulne.

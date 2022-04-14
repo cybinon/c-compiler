@@ -1,0 +1,1 @@
+isdigit() funkts ni ugugdsun data ni 10 tiin toollin tsifr buyu 0 1 2 3 4 5 6 7 8 9 baih esehiig shalgadag. Bish bol 0 utgiig butsaana. Jisheen deer uzuulev.

@@ -1,0 +1,1 @@
+atof() funkts ni floatiig integer, integer iig float turul ruu hurvuuleh funkts ym. Jisheen deer uuniig uzuulev.

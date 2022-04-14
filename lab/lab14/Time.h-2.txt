@@ -1,0 +1,1 @@
+time.h- iin asctime() funkts ni todorhoi syntax iin daguu tsag minut, on sar udriig hevledeg funkts ym. Www Mmm dd hh:mm:ss yyyy/Garig Sar Udur Tsag:Minut:Second On/ gesen durmiin daguu hevlegddeg. Jisheen deer uuniig uzuulev.
