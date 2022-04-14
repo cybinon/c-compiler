@@ -3,6 +3,11 @@ import { exec } from 'child_process';
 
 @Injectable()
 export class CodeService {
+  async loopChecker(code: string) {
+    // Loop recursive check
+    if (code.includes('while(1){') && code.includes('while(true){'))
+      throw new HttpException('Not ending loop', 500);
+  }
   async compile(path: string, output?: string): Promise<any> {
     console.log(output);
     const compiler = await new Promise((resolve, reject) => {

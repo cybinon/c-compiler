@@ -6,7 +6,7 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { writeFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import * as path from 'node:path';
 import { CodeService } from './code.service';
 
@@ -29,11 +29,16 @@ export class CodeController {
     const check = await this.codeService.compile(pathCfile, time + '.out');
     console.log(check);
 
+    console.log(file);
     let executeTime = Date.now();
     const execFile = await this.codeService.execute('./codes/' + time + '.out');
     executeTime = Date.now() - executeTime;
 
     time = Date.now() - time;
-    return { response: execFile, time: executeTime + 'ms' };
+    return {
+      response: execFile,
+      time: executeTime + 'ms',
+      code: readFileSync(pathCfile, { encoding: 'utf-8' }),
+    };
   }
 }
